@@ -21,5 +21,13 @@
       "updateTypes": ["pin", "digest"],
       "enabled": false
     }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["Makefile"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\n.*?_VERSION (:|\\?)= (?<currentValue>.*)\\s"
+      ]
+    }
   ]
 }
