@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": ["Base preset for use with owncloud ci repos"],
+  "extends": [
+    "config:base",
+    ":dependencyDashboard",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":semanticCommitScope(deps)",
+    "docker:enableMajor",
+    ":masterIssue",
+    "group:linters"
+  ],
+  "docker": {
+    "pinDigests": true
+  },
+  "packageRules": [
+    {
+      "description": "Disable digest pinning for Drone CI",
+      "managers": ["droneci"],
+      "updateTypes": ["pin", "digest"],
+      "enabled": false
+    }
+  ]
+}
