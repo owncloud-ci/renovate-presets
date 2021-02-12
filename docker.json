@@ -6,7 +6,10 @@
     {
       "description": "Automerge digest updates (usually security patches)",
       "datasources": ["docker"],
-      "packagePatterns": ["^(alpine|node|owncloudci)", "plugins/base"],
+      "packagePatterns": [
+        "^((amd64|arm32v7|arm64v8)/)?(alpine|node|owncloudci)",
+        "plugins/base"
+      ],
       "updateTypes": ["pin", "digest"],
       "automerge": true
     },
