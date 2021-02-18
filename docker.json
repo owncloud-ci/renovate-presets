@@ -7,7 +7,7 @@
       "description": "Automerge digest updates (usually security patches)",
       "datasources": ["docker"],
       "packagePatterns": [
-        "^((amd64|arm32v7|arm64v8)/)?(alpine|node|owncloudci)",
+        "^((amd64|arm32v7|arm64v8)/)?(alpine|node|owncloudci|owncloud)",
         "plugins/base"
       ],
       "updateTypes": ["pin", "digest"],
