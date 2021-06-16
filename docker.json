@@ -5,6 +5,14 @@
   "packageRules": [
     {
       "description": "Automerge digest updates (usually security patches)",
+      "groupName": "docker digests",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["pin", "digest"],
+      "commitMessageExtra": ""
+    },
+    {
+      "description": "Automerge digest updates (usually security patches)",
+      "groupName": "docker digests",
       "matchDatasources": ["docker"],
       "matchPackagePatterns": [
         "^((amd64|arm32v7|arm64v8)/)?(alpine|node|owncloudci|owncloud)",
@@ -21,7 +29,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["Dockerfile"],
+      "fileMatch": ["^Dockerfile$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\nENV .*?_VERSION=\"\\${.*:-(?<currentValue>.*)}\"\\s"
       ]
