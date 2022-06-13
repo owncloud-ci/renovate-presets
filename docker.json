@@ -4,11 +4,11 @@
   "extends": ["github>owncloud-ci/renovate-presets:base"],
   "packageRules": [
     {
-      "description": "Automerge digest updates (usually security patches)",
+      "description": "Set semantic commit scope for Docker digests",
       "groupName": "docker digests",
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["pin", "digest"],
-      "commitMessageExtra": ""
+      "semanticCommitScope": "docker"
     },
     {
       "description": "Automerge digest updates (usually security patches)",
@@ -18,7 +18,7 @@
         "^((amd64|arm32v7|arm64v8)/)?(alpine|node|golang|owncloudci|owncloud)",
         "plugins/base"
       ],
-      "matchUpdateTypes": ["pin", "digest"],
+      "matchUpdateTypes": ["pin", "digest", "pinDigest"],
       "automerge": true
     },
     {
@@ -29,7 +29,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["Dockerfile"],
+      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\nENV .*?_VERSION=\"\\${.*:-(?<currentValue>.*)}\"\\s"
       ]
