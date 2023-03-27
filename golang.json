@@ -11,7 +11,7 @@
   "packageRules": [
     {
       "description": "Automerge golang dev tools",
-      "groupName": "golang dev tools (non-major)",
+      "groupName": "golang devDeps non-major",
       "matchDatasources": ["github-releases"],
       "matchPackageNames": ["mvdan/gofumpt", "golangci/golangci-lint"],
       "matchUpdateTypes": ["pin", "digest", "patch", "minor"],

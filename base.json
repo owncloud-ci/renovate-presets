@@ -10,7 +10,8 @@
     ":masterIssue",
     "group:linters"
   ],
-  "branchNameStrict": true,
+  "branchNameStrict": false,
+  "forkProcessing": "disabled",
   "docker": {
     "pinDigests": true
   },
