@@ -15,9 +15,9 @@
       "groupName": "docker digests",
       "matchDatasources": ["docker"],
       "matchPackagePatterns": [
-        "^((amd64|arm64v8)/)?(alpine|node|golang|owncloudci|owncloud)",
-        "plugins/base",
-        "mcr.microsoft.com/dotnet/(runtime|sdk)"
+        "^(.+/)?(alpine|node|golang|owncloudci|owncloud)$",
+        "^(.+/)?plugins/base$",
+        "^(.+/)?mcr.microsoft.com/dotnet/(runtime|sdk)$"
       ],
       "matchUpdateTypes": ["pin", "digest", "pinDigest"],
       "automerge": true
