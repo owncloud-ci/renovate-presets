@@ -15,7 +15,7 @@
       "groupName": "docker digests",
       "matchDatasources": ["docker"],
       "matchPackagePatterns": [
-        "^(.+/)?(alpine|node|golang)$",
+        "^(.+/)?(alpine|node|golang|docker)$",
         "^(.+/)?(owncloudci|owncloud)/.+$",
         "^(.+/)?plugins/base$",
         "^(.+/)?mcr.microsoft.com/dotnet/(runtime|sdk)$"
